@@ -5,3 +5,4 @@
 
 from photos import photobooth
 
+photobooth.run()
