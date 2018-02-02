@@ -1,8 +1,7 @@
 import os
 import sys
+
 import lib
-
-
 
 dist_file = os.path.dirname(lib.__file__)
 
@@ -25,7 +24,7 @@ def is_photobooth_file(path):
 
 
 def install_photobooth(git_directory):
-    destination_folder = os.path.join(git_directory, 'hooks', 'photobooth')
+    destination_folder = os.path.join(git_directory, 'hooks', 'photos')
     if not os.path.exists(destination_folder):
         os.mkdir(destination_folder)
 
@@ -35,7 +34,7 @@ def install_photobooth(git_directory):
         if os.path.isfile(existing) and is_photobooth_file(existing):
             os.remove(existing)
 
-    source_folder = os.path.join(dist_file, 'photobooth')
+    source_folder = os.path.join(dist_file, 'photos')
 
     for file_name in os.listdir(source_folder):
         if not file_name.endswith('.py'):
@@ -71,7 +70,7 @@ def make_git_hooks(git_directory):
     install_git_hooks(git_directory)
 
 
-def run_post_install():
+def run():
     if sys.version_info < (3, 5):
         print("Your version of python is too old. gitPhotoBooth requires 3.5 and above.")
         sys.exit(1)
