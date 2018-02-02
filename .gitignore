@@ -1,1 +1,7 @@
 .idea
+.temp.py
+__pycache__
+
+# dist
+dist
+*.egg-info
