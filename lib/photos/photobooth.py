@@ -8,10 +8,6 @@ import os
 
 
 def run():
-    import cv2
-    from datetime import datetime
-    from pathlib import Path
-    import os
 
     camera = cv2.VideoCapture(0)
 
